@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Lamis GHOUALMI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/lamisLinkedinPic.jpg" alt="" /></span>
+							<h1 id="title">Lamis GHOUALMI</h1>
+							<p>Computer science</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+						
+							<li><a href="https://github.com/lamisghoualmi" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.linkedin.com/in/lamisghoualmi/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+							<!--<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>-->
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Lamis Ghoualmi</h2>
+								<p> Ph.D. in computer science <br />
+									
+								Data Analyst
+								<!-- You can add text --></p>
+							</header>
+
+							<footer>
+								<a href="#portfolio" class="button scrolly">My projects</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+                        <!-- My Portfolio description -->
+							<p> This Portfolio is a compilation of current and upcoming public  Data Analysis and Data Science projects that
+								 I have done for academic, self-learning and hobby purposes. I am using Python (numpy , pandas , scipy , scikit
+								  learn , matplotlib ,seaborn), SQL, and Tableau to clean, explore and analyze the data to get some meaningful 
+								  insights.</p>
+                     
+				
+								
+				
+
+							<div class="row">
+								<div class="col-4 col-12-mobile">
+
+
+                                <!-- Cookie sales -->
+									<article class="item">
+										<a href="CookieCanvas.html" class="image fit"><img src="images/CanvasCoockiePerformance.png" alt="" /></a>
+										<header>
+											<h3> Canvas Coockie Performance (Power Bi)</h3>
+										</header>
+									</article>
+
+									<!-- HR analysis -->
+									<article class="item">
+										<a href="HRanalysis.html" class="image fit"><img src="images/HRdashboard.png" alt="" /></a>
+										<header>
+											<h3> Human Ressources analysis (Power Bi)</h3>
+										</header>
+									</article>
+
+										<!-- Mexico Restaurant -->
+									<article class="item">
+										<a href="MexicoRestaurantRating.html" class="image fit"><img src="images/MexicoRestaurantRatings.png" alt="" /></a>
+										<header>
+											<h3> Mexico Restaurant Ratings (SQL and Tableau)</h3>
+										</header>
+									</article>
+									<!-- Project 1 -->
+									<article class="item">
+										<a href="Covid19.html" class="image fit"><img src="images/COVID19Dashboard.png" alt="" /></a>
+										<header>
+											<h3>Covid 19 deaths visualization (Tableau)</h3>
+										</header>
+									</article>
+									
+									<p>
+										
+
+
+									<!-- Project 2 -->
+									<article class="item">
+										<a href="MarketingData.html" class="image fit"><img 
+											src="images/Project3 Marketing data visualization.png" alt="" /></a>
+										<header>
+											<h3>Marketing dataset (Python, SQL, Tableau)</h3>
+										</header>
+									</article>
+								</div>
+                                
+                               <!-- Project 3 -->
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="CustomerAnalysis.html" class="image fit"><img src="images/Project1-CustomerAnalysis.png" alt="" /></a>
+										<header>
+											<h3>Customer Anaysis (Tableau)</h3>
+										</header>
+									</article>
+
+									<!-- Project 4 -->
+									<article class="item">
+										<a href="https://github.com/lamisghoualmi/ProjectDiabtesData_CleaningCorrelation-VisualizationGraphNetwork" class="image fit"><img src="images/ScaterFigureDiabeteData.png" alt="" /></a>
+										<header>
+											<h3>Diabtes correlation and Visualization (Python)</h3>
+										</header>
+									</article>
+								</div>
+								<!-- Project 5 -->
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="https://github.com/lamisghoualmi/ProjectMachineLearning_sklearn-package" class="image fit">
+											<!--<img src="images/FeatureSelection.png" alt="" /></a>-->
+										<header>
+											<h3>Feature selection of load-digit dataset Python (Sklearn)</h3>
+										</header>
+									</article>
+									
+
+									<!-- Project 7 -->
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Wallpaper.png" alt="" /></a>
+										<header>
+											<h3>upcoming project</h3>
+										</header>
+									</article>
+									<!-- Ends Projects -->
+
+									<!-- Project 8 -->
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Wallpaper.png" alt="" /></a>
+										<header>
+											<h3>upcoming project</h3>
+										</header>
+									</article>
+									<!-- Ends Projects -->
+
+									<!-- Project 9 -->
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Wallpaper.png" alt="" /></a>
+										<header>
+											<h3>upcoming project</h3>
+										</header>
+									</article>
+									<!-- Ends Projects -->
+							
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+							<!--<a href="#" class="image featured"><img src="images/nasa-1lfI7wkGWZ4-unsplash.jpg" alt=""/></a>-->
+
+							<p> I am a researcher in computer science.  I have one year of experience in the analysis of
+								 big data. I have a Ph.D. in computer science. My research activity consists mainly of 
+								 two areas: combinatorial optimization and biometrics. I worked on different problems 
+								 encountered in the biometrics field, using bio-inspired optimization
+								algorithms. In other words, I modeled problems encountered in biometrics as 
+								an optimization problems, such as image acquisition,  selection, reduction, and 
+								fusion of homogeneous and heterogeneous biometrics data. I  also have experience in
+								 collecting, transforming, and organizing data for analysis to help make informed 
+								 decisions.</p>
+								
+								 <p> <b> Keywords:</b> Data analysis, Data collection, data cleaning,  Data exploration and  
+								data visualization.</p>
+								
+		
+								 
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+				<section id="contact" class="four">
+					<div class="container">
+
+						<header>
+							<h2>Contact</h2>
+						</header>
+
+					
+						<p>Phone: +1 8654546416</p>
+						<p>Email: lamis.ghoualmi.90@gmail.com</p>
+						<p>Location: Knoxville, Tennessee, USA.</p>
+						
+                        <div class="bottom">
+
+							<!-- Social Icons -->
+								<ul class="icons">
+								
+									<li><a href="https://github.com/lamisghoualmi" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									<li><a href="https://www.linkedin.com/in/lamisghoualmi/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+									 
+								</ul>
+		
+						</div>
+
+						<!--<form method="post" action="#">
+							<div class="row">
+								<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+								<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+								<div class="col-12">
+									<textarea name="message" placeholder="Message"></textarea>
+								</div>
+								<div class="col-12">
+									<input type="submit" value="Send Message" />
+								</div>
+							</div>
+						</form>-->
+
+					</div>
+				</section>
+
+		<!-- Footer -->
+		<!--	<div id="footer">
+
+			-->	<!-- Copyright -->
+			<!--		<ul class="copyright">
+						<li>&copy; LamisGHOUALMI. All rights reserved.</li><li>Design: <a href="http://html5up.net">Personnal website</a></li>
+					</ul>
+
+			</div> -->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
