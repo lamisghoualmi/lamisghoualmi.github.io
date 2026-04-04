@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/animations.css" />
 	</head>
 	<body class="is-preload">
 
@@ -53,32 +54,40 @@
 
 			</div>
 
+		<!-- Particles Background -->
+		<canvas id="particles-canvas"></canvas>
+
 		<!-- Main -->
 			<div id="main">
 
 				<!-- Intro -->
 					<section id="top" class="one dark cover">
+
+						<!-- Animated geometric shapes -->
+						<div class="geo-shapes">
+							<div class="geo-shape"></div>
+							<div class="geo-shape"></div>
+							<div class="geo-shape"></div>
+						</div>
+
 						<div class="container">
 
 							<header>
-								<h2 class="alt">Lamis Ghoualmi</h2>
-								<p>AI &amp; ML Solutions Engineer &nbsp;|&nbsp; Microsoft Fabric · Azure OpenAI · Power BI<br />
+								<h2 class="alt" id="intro-headline">Lamis Ghoualmi</h2>
+								<p id="typewriter-text">AI &amp; ML Solutions Engineer &nbsp;|&nbsp; Microsoft Fabric · Azure OpenAI · Power BI<br />
 									Agentic AI &amp; Data Workflows &nbsp;|&nbsp; Scalable Analytics Systems<br />
 									IEEE · Elsevier · Springer Published &nbsp;|&nbsp; Conference Speaker</p>
-									
-								
-								<!-- You can add text -->
 							</header>
 
 							<footer>
-								<a href="#portfolio" class="button scrolly">Portfolio</a>
+								<a href="#about" class="button scrolly">Explore</a>
 							</footer>
-							
+
 						</div>
 					</section>
 <!-- About Me -->
 					<section id="about" class="three">
-						<div class="container">
+						<div class="container fade-in-section">
 
 							<header>
 								<h2>About Me</h2>
@@ -104,69 +113,119 @@
 						</div>
 					</section>
 
+				<!-- Skills -->
+					<section id="skills" class="two">
+						<div class="container fade-in-section">
+
+							<header>
+								<h2>Skills &amp; Technologies</h2>
+							</header>
+
+							<div class="skills-grid">
+								<!-- Cloud & AI Platform -->
+								<span class="skill-badge"><span class="skill-dot"></span>Microsoft Fabric</span>
+								<span class="skill-badge"><span class="skill-dot"></span>Azure OpenAI</span>
+								<span class="skill-badge"><span class="skill-dot"></span>Azure AI Foundry</span>
+								<span class="skill-badge"><span class="skill-dot"></span>Power BI</span>
+								<span class="skill-badge"><span class="skill-dot"></span>ETL Pipelines</span>
+								<span class="skill-badge"><span class="skill-dot"></span>Data Engineering</span>
+								<!-- AI & ML -->
+								<span class="skill-badge purple"><span class="skill-dot"></span>Agentic AI</span>
+								<span class="skill-badge purple"><span class="skill-dot"></span>Machine Learning</span>
+								<span class="skill-badge purple"><span class="skill-dot"></span>Deep Learning</span>
+								<span class="skill-badge purple"><span class="skill-dot"></span>Biometric AI</span>
+								<span class="skill-badge purple"><span class="skill-dot"></span>Feature Engineering</span>
+								<span class="skill-badge purple"><span class="skill-dot"></span>Bio-inspired Optimization</span>
+								<!-- Engineering & Tools -->
+								<span class="skill-badge green"><span class="skill-dot"></span>Python</span>
+								<span class="skill-badge green"><span class="skill-dot"></span>SQL &amp; PL/SQL</span>
+								<span class="skill-badge green"><span class="skill-dot"></span>Oracle Data Integrator</span>
+								<span class="skill-badge green"><span class="skill-dot"></span>SQL Server</span>
+								<span class="skill-badge green"><span class="skill-dot"></span>Streamlit</span>
+								<span class="skill-badge green"><span class="skill-dot"></span>Data Visualization</span>
+								<!-- Research -->
+								<span class="skill-badge purple"><span class="skill-dot"></span>IEEE · Elsevier · Springer</span>
+								<span class="skill-badge purple"><span class="skill-dot"></span>160+ Citations · h-index 6</span>
+							</div>
+
+						</div>
+					</section>
+
 				<!-- Experience -->
-					<section id="experience" class="two">
-						<div class="container">
+					<section id="experience" class="three">
+						<div class="container fade-in-section">
 
 							<header>
 								<h2>Experience</h2>
 							</header>
 
-							<div style="text-align: left;">
+							<div class="timeline">
 
 								<!-- Job 1 -->
-								<div style="margin-bottom: 2.5em;">
-									<h3 style="margin-bottom: 0.15em;">Data &amp; AI Solutions Engineer <span style="font-weight: 300; font-size: 0.9em;">(Software Analyst III)</span></h3>
-									<p style="margin: 0 0 0.15em; font-weight: 600;">University of Tennessee, Knoxville &nbsp;·&nbsp; Full-time</p>
-									<p style="margin: 0 0 0.75em; opacity: 0.7; font-size: 0.9em;">Jun 2023 – Present &nbsp;·&nbsp; Knoxville, Tennessee, United States · Hybrid</p>
-									<ul style="margin: 0; padding-left: 1.5em;">
-										<li>Designed and led end-to-end Project Management Dashboard development leveraging Microsoft Fabric architecture.</li>
-										<li>Built and deployed multiple Power BI dashboards spanning Project Management, Enrollment Management, Human Resources, and more — providing actionable insights for decision-making.</li>
-										<li>Developed robust ETL pipelines using Oracle Data Integrator (ODI), PL/SQL, and SQL Server; created data marts, views, procedures, and jobs for Oracle and SQL Server environments.</li>
-										<li>Automated data workflows leveraging Fabric pipelines and ODI for efficient, scalable processing.</li>
-										<li>Presented proof-of-concept projects and end-to-end architectures at internal symposiums and external conferences, showcasing AI and ML integration for higher education challenges.</li>
-										<li>Partnered with operations, IT teams, and senior stakeholders to identify requirements, resolve data integration issues, and ensure seamless implementation of analytics solutions.</li>
-										<li>Applied advanced data cleaning, transformation, and AI-driven analytics to enhance data integrity, generate predictive insights, and support strategic institutional decisions.</li>
-									</ul>
+								<div class="timeline-item">
+									<div class="timeline-marker"></div>
+									<div class="timeline-content">
+										<h3 class="timeline-title">Data &amp; AI Solutions Engineer <span class="timeline-title-sub">(Software Analyst III)</span></h3>
+										<p class="timeline-company">University of Tennessee, Knoxville &nbsp;·&nbsp; Full-time</p>
+										<p class="timeline-meta">Jun 2023 – Present &nbsp;·&nbsp; Knoxville, Tennessee · Hybrid</p>
+										<ul>
+											<li>Designed and led end-to-end Project Management Dashboard development leveraging Microsoft Fabric architecture.</li>
+											<li>Built and deployed multiple Power BI dashboards spanning Project Management, Enrollment Management, Human Resources, and more — providing actionable insights for decision-making.</li>
+											<li>Developed robust ETL pipelines using Oracle Data Integrator (ODI), PL/SQL, and SQL Server; created data marts, views, procedures, and jobs for Oracle and SQL Server environments.</li>
+											<li>Automated data workflows leveraging Fabric pipelines and ODI for efficient, scalable processing.</li>
+											<li>Presented proof-of-concept projects and end-to-end architectures at internal symposiums and external conferences, showcasing AI and ML integration for higher education challenges.</li>
+											<li>Partnered with operations, IT teams, and senior stakeholders to identify requirements, resolve data integration issues, and ensure seamless implementation of analytics solutions.</li>
+											<li>Applied advanced data cleaning, transformation, and AI-driven analytics to enhance data integrity, generate predictive insights, and support strategic institutional decisions.</li>
+										</ul>
+									</div>
 								</div>
 
 								<!-- Job 2 -->
-								<div style="margin-bottom: 2.5em;">
-									<h3 style="margin-bottom: 0.15em;">AI &amp; ML Research Scientist <span style="font-weight: 300; font-size: 0.9em;">(Biometrics &amp; Healthcare Analytics)</span></h3>
-									<p style="margin: 0 0 0.15em; font-weight: 600;">University Abdelhamid MEHRI Constantine 2 &nbsp;·&nbsp; Contract</p>
-									<p style="margin: 0 0 0.75em; opacity: 0.7; font-size: 0.9em;">Jan 2021 – Jan 2023 &nbsp;·&nbsp; Remote</p>
-									<ul style="margin: 0; padding-left: 1.5em;">
-										<li>Architected an end-to-end data engineering pipeline on the UCI Chronic Kidney Disease dataset; performed EDA to surface actionable insights and clinically relevant patterns.</li>
-										<li>Designed and trained a deep learning model for kidney disease prediction, applying advanced feature engineering and model optimization to maximize diagnostic accuracy.</li>
-										<li>Built automated ML pipelines for heart disease prognosis using the 2020 CDC dataset, engineering predictive features and fine-tuning classification architectures for clinical decision support.</li>
-										<li>Engineered a multi-objective optimization framework for palm vein biometric authentication, jointly optimizing authentication accuracy and feature vector compactness through a custom AI-driven loss function.</li>
-										<li>Implemented bio-inspired metaheuristic optimizers including Particle Swarm Optimization (PSO) and Artificial Bee Colony (ABC) for hyperparameter tuning and feature subset selection.</li>
-									</ul>
+								<div class="timeline-item">
+									<div class="timeline-marker"></div>
+									<div class="timeline-content">
+										<h3 class="timeline-title">AI &amp; ML Research Scientist <span class="timeline-title-sub">(Biometrics &amp; Healthcare Analytics)</span></h3>
+										<p class="timeline-company">University Abdelhamid MEHRI Constantine 2 &nbsp;·&nbsp; Contract</p>
+										<p class="timeline-meta">Jan 2021 – Jan 2023 &nbsp;·&nbsp; Remote</p>
+										<ul>
+											<li>Architected an end-to-end data engineering pipeline on the UCI Chronic Kidney Disease dataset; performed EDA to surface actionable insights and clinically relevant patterns.</li>
+											<li>Designed and trained a deep learning model for kidney disease prediction, applying advanced feature engineering and model optimization to maximize diagnostic accuracy.</li>
+											<li>Built automated ML pipelines for heart disease prognosis using the 2020 CDC dataset, engineering predictive features and fine-tuning classification architectures for clinical decision support.</li>
+											<li>Engineered a multi-objective optimization framework for palm vein biometric authentication, jointly optimizing accuracy and feature vector compactness through a custom AI-driven loss function.</li>
+											<li>Implemented bio-inspired metaheuristic optimizers (PSO, ABC) for hyperparameter tuning and feature subset selection.</li>
+										</ul>
+									</div>
 								</div>
 
 								<!-- Job 3 -->
-								<div style="margin-bottom: 2.5em;">
-									<h3 style="margin-bottom: 0.15em;">Postdoctoral Research Associate <span style="font-weight: 300; font-size: 0.9em;">(AI-Driven Environmental Exposome &amp; Cardiovascular Health Analytics)</span></h3>
-									<p style="margin: 0 0 0.15em; font-weight: 600;">University of Tennessee, Knoxville &nbsp;·&nbsp; Contract</p>
-									<p style="margin: 0 0 0.75em; opacity: 0.7; font-size: 0.9em;">Nov 2019 – Dec 2020 &nbsp;·&nbsp; Knoxville, Tennessee, United States · Hybrid</p>
-									<ul style="margin: 0; padding-left: 1.5em;">
-										<li>Led end-to-end data engineering and ML pipeline on large-scale public health exposome (PHE) data at the Langston Laboratory, investigating the impact of environmental factors on population health outcomes.</li>
-										<li>Architected a robust data cleaning and preprocessing pipeline handling big data challenges including duplicates, missing values, outliers, and low-variance features.</li>
-										<li>Designed an intelligent feature selection framework leveraging Mutual Information and Decision Tree algorithms to identify statistically significant PHE variables, reducing dimensionality while preserving predictive signal.</li>
-										<li>Applied Pearson correlation analysis to quantify inter-variable relationships, surface multicollinearity patterns, and validate feature independence for downstream modeling.</li>
-										<li>Engineered a graph-theoretic representation layer mapping correlated feature subsets into densely connected paraclique subgraph structures, providing a novel topological view of environmental feature interactions.</li>
-									</ul>
+								<div class="timeline-item">
+									<div class="timeline-marker"></div>
+									<div class="timeline-content">
+										<h3 class="timeline-title">Postdoctoral Research Associate <span class="timeline-title-sub">(AI-Driven Environmental Exposome &amp; Cardiovascular Health Analytics)</span></h3>
+										<p class="timeline-company">University of Tennessee, Knoxville &nbsp;·&nbsp; Contract</p>
+										<p class="timeline-meta">Nov 2019 – Dec 2020 &nbsp;·&nbsp; Knoxville, Tennessee · Hybrid</p>
+										<ul>
+											<li>Led end-to-end data engineering and ML pipeline on large-scale public health exposome (PHE) data at the Langston Laboratory, investigating environmental impacts on population health.</li>
+											<li>Architected a robust preprocessing pipeline handling duplicates, missing values, outliers, and low-variance features.</li>
+											<li>Designed an intelligent feature selection framework using Mutual Information and Decision Trees to identify statistically significant PHE variables.</li>
+											<li>Applied Pearson correlation analysis to surface multicollinearity patterns and validate feature independence.</li>
+											<li>Engineered a graph-theoretic paraclique representation layer providing a novel topological view of environmental feature interactions.</li>
+										</ul>
+									</div>
 								</div>
 
 								<!-- Job 4 -->
-								<div style="margin-bottom: 1em;">
-									<h3 style="margin-bottom: 0.15em;">Assistant Professor</h3>
-									<p style="margin: 0 0 0.15em; font-weight: 600;">University Abdelhamid MEHRI Constantine 2 &nbsp;·&nbsp; Full-time</p>
-									<p style="margin: 0 0 0.75em; opacity: 0.7; font-size: 0.9em;">Sep 2017 – Nov 2019 &nbsp;·&nbsp; Constantine, Algeria · On-site</p>
-									<ul style="margin: 0; padding-left: 1.5em;">
-										<li>Delivered lectures to sophomore and freshman students; advised multiple undergraduate students through their projects.</li>
-										<li>Courses taught: Theory of Formal Languages, Multimedia Image Processing, Network Fundamentals, Introduction to Algorithmics.</li>
-									</ul>
+								<div class="timeline-item">
+									<div class="timeline-marker"></div>
+									<div class="timeline-content">
+										<h3 class="timeline-title">Assistant Professor</h3>
+										<p class="timeline-company">University Abdelhamid MEHRI Constantine 2 &nbsp;·&nbsp; Full-time</p>
+										<p class="timeline-meta">Sep 2017 – Nov 2019 &nbsp;·&nbsp; Constantine, Algeria · On-site</p>
+										<ul>
+											<li>Delivered lectures to sophomore and freshman students; advised multiple undergraduate students through their projects.</li>
+											<li>Courses: Theory of Formal Languages, Multimedia Image Processing, Network Fundamentals, Introduction to Algorithmics.</li>
+										</ul>
+									</div>
 								</div>
 
 							</div>
@@ -176,7 +235,7 @@
 
 				<!-- Portfolio -->
 					<section id="portfolio" class="two">
-						<div class="container">
+						<div class="container fade-in-section">
 
 							<header>
 								<h2>Portfolio </h2>
@@ -193,10 +252,10 @@
 								<!-- COLOMNS 1 -->
 								<div class="col-4 col-12-mobile">
 
-									<article class="item">
+									<article class="item section-header">
 										<a href="#" class="image fit"><img src="images/Wallpaper.png" alt="" /></a>
 										<header>
-											<h3>RESEARCH  & TEACHING EXPERIENCE </h3>
+											<h3>RESEARCH &amp; TEACHING EXPERIENCE</h3>
 										</header>
 									</article>
 
@@ -267,10 +326,10 @@
 
 								<div class="col-4 col-12-mobile">
 
-									<article class="item">
+									<article class="item section-header">
 										<a href="#" class="image fit"><img src="images/Wallpaper.png" alt="" /></a>
 										<header>
-											<h3>DATA ANALYSIS PROJECTS </h3>
+											<h3>DATA ANALYSIS PROJECTS</h3>
 										</header>
 									</article>
 
@@ -349,7 +408,7 @@
 								<div class="col-4 col-12-mobile">
 
 
-									<article class="item">
+									<article class="item section-header">
 										<a href="#" class="image fit"><img src="images/Wallpaper.png" alt="" /></a>
 										<header>
 											<h3>DATA SCIENCE PROJECTS</h3>
@@ -445,7 +504,7 @@
 				<!-- Contact   lamisghoualmi.github.io
 -->
 				<section id="contact" class="four">
-					<div class="container">
+					<div class="container fade-in-section">
 
 						<header>
 							<h2>Contact</h2>
@@ -512,6 +571,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/animations.js"></script>
 
 	</body>
 </html>
