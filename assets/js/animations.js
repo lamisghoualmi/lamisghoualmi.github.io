@@ -4,10 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     initParticles();
+    initSectionParticles();
     initScrollObserver();
     initSkillsBadges();
     initTimeline();
-    initIntroLoop();   // replaces old one-shot intro
+    initIntroLoop();
 });
 
 
@@ -80,7 +81,89 @@ function initParticles() {
 
 
 /* =========================================================
-   2. INTRO — LOOPING SLIDE-IN + TYPEWRITER
+   2. SECTION-LOCAL PARTICLE NETWORKS
+      Each target section (#top, #skills, #about) gets its own
+      canvas rendered below the content at z-index: 0
+   ========================================================= */
+function initSectionParticles() {
+    var canvases = document.querySelectorAll('.section-particles');
+    canvases.forEach(function (canvas) {
+        runSectionCanvas(canvas);
+    });
+}
+
+function runSectionCanvas(canvas) {
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var COUNT = 55;
+    var DIST  = 130;
+
+    function resize() {
+        var section   = canvas.parentElement;
+        canvas.width  = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', function () {
+        resize();
+        // Re-clamp particles that are now out of bounds
+        particles.forEach(function (p) {
+            if (p.x > canvas.width)  p.x = canvas.width;
+            if (p.y > canvas.height) p.y = canvas.height;
+        });
+    });
+
+    for (var i = 0; i < COUNT; i++) {
+        particles.push({
+            x:  Math.random() * canvas.width,
+            y:  Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.35,
+            vy: (Math.random() - 0.5) * 0.35,
+            r:  Math.random() * 1.6 + 0.5,
+            a:  Math.random() * 0.5 + 0.25
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Connections
+        for (var i = 0; i < particles.length; i++) {
+            for (var j = i + 1; j < particles.length; j++) {
+                var dx = particles[i].x - particles[j].x;
+                var dy = particles[i].y - particles[j].y;
+                var d  = Math.sqrt(dx * dx + dy * dy);
+                if (d < DIST) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = 'rgba(0,212,255,' + (1 - d / DIST) * 0.5 + ')';
+                    ctx.lineWidth   = 0.7;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Dots
+        particles.forEach(function (p) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0,212,255,' + p.a + ')';
+            ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
+
+
+/* =========================================================
+   3. INTRO — LOOPING SLIDE-IN + TYPEWRITER
       Resets every time the section scrolls out, retypes on re-entry
    ========================================================= */
 
@@ -194,7 +277,7 @@ function runTypewriter(el) {
 
 
 /* =========================================================
-   3. SCROLL FADE-IN (sections)
+   4. SCROLL FADE-IN (sections)
    ========================================================= */
 function initScrollObserver() {
     var els = document.querySelectorAll('.fade-in-section');
@@ -217,7 +300,7 @@ function initScrollObserver() {
 
 
 /* =========================================================
-   4. SKILLS BADGE BOUNCE
+   5. SKILLS BADGE BOUNCE
    ========================================================= */
 function initSkillsBadges() {
     var grid = document.querySelector('.skills-grid');
@@ -247,7 +330,7 @@ function initSkillsBadges() {
 
 
 /* =========================================================
-   5. TIMELINE SLIDE-IN
+   6. TIMELINE SLIDE-IN
    ========================================================= */
 function initTimeline() {
     var items = document.querySelectorAll('.timeline-item');
