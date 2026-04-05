@@ -300,32 +300,34 @@ function initScrollObserver() {
 
 
 /* =========================================================
-   5. SKILLS BADGE BOUNCE
+   5. SKILLS BADGE / ICON BOUNCE
    ========================================================= */
 function initSkillsBadges() {
-    var grid = document.querySelector('.skills-grid');
-    if (!grid || !window.IntersectionObserver) {
-        if (grid) grid.querySelectorAll('.skill-badge').forEach(function (b) {
-            b.classList.add('bounced-in');
-        });
-        return;
+    // Support both old .skill-badge (Teaching.html) and new .skill-item (index.html)
+    var grids = document.querySelectorAll('.skills-grid');
+    if (!grids.length) return;
+
+    function bounceIn(grid) {
+        var items = grid.querySelectorAll('.skill-badge, .skill-item');
+        if (!window.IntersectionObserver) {
+            items.forEach(function (el) { el.classList.add('bounced-in'); });
+            return;
+        }
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var els = entry.target.querySelectorAll('.skill-badge, .skill-item');
+                    els.forEach(function (el, i) {
+                        setTimeout(function () { el.classList.add('bounced-in'); }, i * 65);
+                    });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        obs.observe(grid);
     }
 
-    var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                var badges = entry.target.querySelectorAll('.skill-badge');
-                badges.forEach(function (badge, i) {
-                    setTimeout(function () {
-                        badge.classList.add('bounced-in');
-                    }, i * 70);
-                });
-                obs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    obs.observe(grid);
+    grids.forEach(bounceIn);
 }
 
 
