@@ -19,8 +19,8 @@ function initParticles() {
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     var particles = [];
-    var PARTICLE_COUNT  = 55;
-    var CONNECTION_DIST = 130;
+    var PARTICLE_COUNT  = 90;
+    var CONNECTION_DIST = 160;
 
     function resize() {
         canvas.width  = window.innerWidth;
@@ -33,10 +33,10 @@ function initParticles() {
         return {
             x:  Math.random() * canvas.width,
             y:  Math.random() * canvas.height,
-            vx: (Math.random() - 0.5) * 0.38,
-            vy: (Math.random() - 0.5) * 0.38,
-            r:  Math.random() * 1.4 + 0.4,
-            a:  Math.random() * 0.45 + 0.15
+            vx: (Math.random() - 0.5) * 0.35,
+            vy: (Math.random() - 0.5) * 0.35,
+            r:  Math.random() * 1.8 + 0.6,
+            a:  Math.random() * 0.55 + 0.3
         };
     }
 
@@ -51,12 +51,12 @@ function initParticles() {
                 var dy   = particles[i].y - particles[j].y;
                 var dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < CONNECTION_DIST) {
-                    var alpha = (1 - dist / CONNECTION_DIST) * 0.3;
+                    var alpha = (1 - dist / CONNECTION_DIST) * 0.55;
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
                     ctx.strokeStyle = 'rgba(0,212,255,' + alpha + ')';
-                    ctx.lineWidth   = 0.5;
+                    ctx.lineWidth   = 0.7;
                     ctx.stroke();
                 }
             }
