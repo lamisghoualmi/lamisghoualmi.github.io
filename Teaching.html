@@ -1,93 +1,581 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP — restyled for Lamis GHOUALMI portfolio
+-->
 <html>
-<head>
+	<head>
+		<title>Teaching Experience | Lamis GHOUALMI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/animations.css" />
+		<style>
+			/* ---- Page-specific overrides ---- */
 
-</head>
-<body>
+			/* Hero section */
+			#page-hero {
+				padding: 7em 0 5em !important;
+			}
 
-  <h1>Statement of Teaching Philosophy</h1>
-  
-  <section>
-    <p>
-      Teaching is a critical aspect of academia, particularly in the field of computer science. 
-      It goes beyond the mere dissemination of information and involves inspiring students to question 
-      and pursue their research actively. With the field continually evolving and expanding, 
-      it is vital to motivate students to stay curious and engaged. I am committed to empowering my students with the skills they need to succeed. I believe that a sense of empowerment 
-      comes from the ability to analyze, discover, and develop novel insights and techniques that can be 
-      applied to real-world challenges. Moreover, it arises from recognizing one's value as a member of society.
-       As an educator, I strive to instill this sense of confidence and purpose in my students, ultimately guiding them toward a brighter future.
+			#page-hero h1 {
+				font-size: 2.4em !important;
+				font-weight: 700 !important;
+				color: #fff !important;
+				margin-bottom: 0.4em;
+				opacity: 0;
+				transform: translateX(-50px);
+				transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1),
+				            transform 0.9s cubic-bezier(0.16,1,0.3,1);
+			}
 
-      
-    </p>
+			#page-hero h1.visible {
+				opacity: 1;
+				transform: translateX(0);
+			}
 
-    <p>
-      My teaching philosophy rests on three fundamental principles. Firstly, I believe that students learn best when they are actively engaged with their peers and the instructor. This means creating an environment where students can collaborate, share ideas, and participate in meaningful discussions that foster critical thinking.
+			#page-hero p.subtitle {
+				font-family: 'JetBrains Mono', monospace !important;
+				font-size: 0.68em !important;
+				color: rgba(0,212,255,0.82) !important;
+				line-height: 1.9em;
+				letter-spacing: 0.01em;
+			}
 
-      Secondly, I understand that there is no "one size fits all" approach to teaching. As such, I am committed to continuously growing pedagogically and improving as an educator. I am always exploring new teaching methods and strategies that can help me better meet the needs of my students.
-      
-      Finally, I am deeply committed to open communication with my students. I want them to feel comfortable coming to me with any questions or concerns they may have. By fostering a proactive and supportive dialogue, I can help address any issues that arise and ensure that all students have the opportunity to thrive in their studies.
+			#page-hero .back-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4em;
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 0.58em;
+				color: rgba(0,212,255,0.6) !important;
+				border: none !important;
+				letter-spacing: 0.08em;
+				transition: color 0.25s ease !important;
+				margin-bottom: 2em;
+				text-transform: uppercase;
+			}
 
-   
-      
-    </p>
-    <p>
-      
-      I structure all my courses using a critical pedagogy approach because I firmly believe that students learn more effectively when they understand the real-world impact of their work and field. By connecting theoretical concepts to practical applications, I aim to create a learning environment that inspires students to think critically and develop a deeper understanding of their subject matter. Ultimately, this approach empowers students to become more engaged and active participants in their chosen field. 
-      
-    </p>
+			#page-hero .back-link:hover {
+				color: #00d4ff !important;
+			}
 
-    <p>
-      I lectured the course on modeling and simulation  as an assistant professor at the University 
-      of Constantine2 - Abdelhamid Mehri for approximately eighty graduate students 
-      (first year of the master's degree program). This course presents an introduction to
-       modeling and simulation, the classification of models (physical modeling, symbolic modeling, 
-       static modeling, dynamic modeling ), mathematical modeling (Simple mathematical modeling, Operations research),
-         State machine modeling (Finite-state machine, State chart), and Petri net modeling. It also presents 
-         some simulation tools used in the computer science field. The core course allows students to acquire
-          the technical and practical skills they need to succeed in both research and industry, such as the
-           understanding of the evolution of a dynamic natural mechanism, for example, the spread of infectious disease.
-            Simulating a production process helps optimize resource usage, improve planning accuracy, and grow a business.
+			/* Philosophy section */
+			.philosophy-card {
+				background: rgba(22,27,34,0.55);
+				border: 1px solid rgba(0,212,255,0.08);
+				border-radius: 10px;
+				padding: 1.8em 2em;
+				margin-bottom: 1.4em;
+				text-align: left;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease;
+				backdrop-filter: blur(4px);
+			}
 
-      
-    </p>
+			.philosophy-card:hover {
+				border-color: rgba(0,212,255,0.22);
+				box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+			}
 
-    <p>
-      
-      I have taught the practical work of the course 
-      \textit{Network Fundamentals} as an assistant professor at the University of Constantine2 - Abdelhamid Mehri 
-      to undergraduate students (second year of the bachelor's degree program) for approximately thirty-five students.
-       This course presents an overview of corporate networks, their role, and the different equipment that composes
-        them. It explains the fundamental principles of networks, such as switching modes or the structuring of 
-        protocols in layers.
-      
-    </p>
+			.philosophy-card h3 {
+				font-size: 0.85em !important;
+				font-weight: 600 !important;
+				color: #00d4ff !important;
+				margin-bottom: 0.6em !important;
+				display: flex;
+				align-items: center;
+				gap: 0.5em;
+			}
 
+			.philosophy-card h3 .card-icon {
+				font-size: 1em;
+				opacity: 0.8;
+			}
 
-    <p>
-      
-      I have taught the practical work of the course 
-      multimedia image processing techniques as an assistant professor at the University of Constantine2 
-      - Abdelhamid Mehri to undergraduate students (third year of the bachelor's degree program) 
-      for approximately thirty-five students. This course presents digital image processing (image characteristics: 
-      definition, pixel, dimension, resolution, etc.), the human visual system and artificial vision system, main 
-      image formats, color models (RGB, YUV, YCbCr), and image processing (contour neighborhood, histogram equalization,
-       threshold, binarization), 
-      classification and segmentation of 2D images, and 2D image compression algorithms.
-      
-    </p>
+			.philosophy-card p {
+				font-size: 0.75em !important;
+				color: #8b949e;
+				line-height: 1.85em;
+				margin: 0 !important;
+			}
 
-    <p>
-      I have taught the practical work of the course 
-introduction to algorithmics as a teacher assistant at the University of Constantine1 - Mentouri brothers
- for undergraduate students (first year of the bachelor's degree program) for approximately thirty-five students 
- The course presents the prevalent data formats, algorithmic frameworks, and algorithms used to solve these difficulties.
-  The course focuses on how algorithms and programming relate to one another.
-      
-      
-    </p>
+			/* Courses grid */
+			.courses-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 1.2em;
+				margin-top: 1.5em;
+				text-align: left;
+			}
 
+			.course-card {
+				background: rgba(22,27,34,0.55);
+				border: 1px solid rgba(0,212,255,0.07);
+				border-radius: 10px;
+				padding: 1.4em 1.6em;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+				backdrop-filter: blur(4px);
+				opacity: 0;
+				transform: translateY(24px);
+			}
 
-    
-  
-</body>
+			.course-card.visible {
+				opacity: 1;
+				transform: translateY(0);
+				transition: opacity 0.55s ease, transform 0.55s ease,
+				            border-color 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.course-card:hover {
+				border-color: rgba(0,212,255,0.22);
+				box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+				transform: translateY(-4px) !important;
+			}
+
+			.course-card .course-level {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 0.55em;
+				color: #a855f7;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				margin-bottom: 0.5em;
+			}
+
+			.course-card h3 {
+				font-size: 0.82em !important;
+				font-weight: 600 !important;
+				color: #e6edf3 !important;
+				margin-bottom: 0.5em !important;
+				line-height: 1.4em !important;
+			}
+
+			.course-card p {
+				font-size: 0.68em !important;
+				color: #8b949e;
+				line-height: 1.75em;
+				margin: 0 !important;
+			}
+
+			.course-card .course-tag {
+				display: inline-block;
+				margin-top: 0.8em;
+				padding: 0.2em 0.75em;
+				background: rgba(0,212,255,0.06);
+				border: 1px solid rgba(0,212,255,0.15);
+				border-radius: 100px;
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 0.55em;
+				color: #00d4ff;
+			}
+
+			/* Leadership & PM section */
+			.lpm-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+				gap: 1.2em;
+				margin-top: 1.5em;
+				text-align: left;
+			}
+
+			.lpm-card {
+				background: rgba(22,27,34,0.55);
+				border: 1px solid rgba(168,85,247,0.1);
+				border-radius: 10px;
+				padding: 1.4em 1.6em;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+				backdrop-filter: blur(4px);
+				opacity: 0;
+				transform: translateY(24px);
+			}
+
+			.lpm-card.visible {
+				opacity: 1;
+				transform: translateY(0);
+				transition: opacity 0.55s ease, transform 0.55s ease,
+				            border-color 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.lpm-card:hover {
+				border-color: rgba(168,85,247,0.3);
+				box-shadow: 0 8px 28px rgba(168,85,247,0.1);
+				transform: translateY(-4px) !important;
+			}
+
+			.lpm-card .lpm-icon {
+				font-size: 1.4em;
+				margin-bottom: 0.6em;
+				display: block;
+			}
+
+			.lpm-card h3 {
+				font-size: 0.82em !important;
+				font-weight: 600 !important;
+				color: #a855f7 !important;
+				margin-bottom: 0.5em !important;
+			}
+
+			.lpm-card p {
+				font-size: 0.68em !important;
+				color: #8b949e;
+				line-height: 1.75em;
+				margin: 0 !important;
+			}
+
+			.lpm-card ul {
+				margin: 0.5em 0 0 !important;
+				padding: 0;
+				list-style: none;
+			}
+
+			.lpm-card ul li {
+				font-size: 0.68em;
+				color: #8b949e;
+				line-height: 1.7em;
+				padding-left: 1.1em;
+				position: relative;
+			}
+
+			.lpm-card ul li::before {
+				content: '▸';
+				position: absolute;
+				left: 0;
+				color: #a855f7;
+				font-size: 0.85em;
+			}
+
+			/* Section header underline accent */
+			.section-heading {
+				background: linear-gradient(135deg, #00d4ff 0%, #a855f7 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				font-weight: 600 !important;
+				display: inline-block;
+				position: relative;
+				margin-bottom: 1.5em !important;
+			}
+
+			.section-heading::after {
+				content: '';
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 50px;
+				height: 2px;
+				background: linear-gradient(135deg, #00d4ff, #a855f7);
+				border-radius: 2px;
+			}
+
+			.section-heading.left-align::after {
+				left: 0;
+				transform: none;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Particles Background -->
+		<canvas id="particles-canvas"></canvas>
+
+		<!-- Header / Sidebar -->
+		<div id="header">
+			<div class="top">
+				<div id="logo">
+					<span class="image avatar48"><img src="images/Lamis Pro Pic.png" alt="" /></span>
+					<h1 id="title">Lamis GHOUALMI</h1>
+					<p>AI Solutions Engineer</p>
+				</div>
+
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html#top"><span class="icon solid fa-home">Home</span></a></li>
+						<li><a href="#philosophy"><span class="icon solid fa-book">Philosophy</span></a></li>
+						<li><a href="#leadership"><span class="icon solid fa-users">Leadership</span></a></li>
+						<li><a href="#courses"><span class="icon solid fa-chalkboard-teacher">Courses</span></a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="bottom">
+				<ul class="icons">
+					<li><a href="https://github.com/lamisghoualmi" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/lamisghoualmi/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Hero -->
+			<section id="page-hero" class="one dark cover">
+				<canvas class="section-particles" aria-hidden="true"></canvas>
+
+				<div class="geo-shapes">
+					<div class="geo-shape"></div>
+					<div class="geo-shape"></div>
+					<div class="geo-shape"></div>
+				</div>
+
+				<div class="container">
+					<a href="index.html" class="back-link">
+						<span class="icon solid fa-arrow-left"></span> Back to Portfolio
+					</a>
+					<header>
+						<h1 id="page-headline">Teaching Experience</h1>
+						<p class="subtitle">
+							Assistant Professor &nbsp;·&nbsp; University Abdelhamid MEHRI Constantine 2<br />
+							Academic Leader &nbsp;·&nbsp; Mentor &nbsp;·&nbsp; Curriculum Designer
+						</p>
+					</header>
+				</div>
+			</section>
+
+			<!-- Teaching Philosophy -->
+			<section id="philosophy" class="three">
+				<canvas class="section-particles" aria-hidden="true"></canvas>
+				<div class="container fade-in-section">
+
+					<header>
+						<h2 class="section-heading">Teaching Philosophy</h2>
+					</header>
+
+					<div class="philosophy-card">
+						<h3><span class="card-icon">◈</span> Core Belief</h3>
+						<p>Teaching is a critical aspect of academia, particularly in computer science. It goes beyond disseminating information — it is about inspiring students to question, explore, and actively pursue research. I am committed to empowering students with the skills to analyze, discover, and develop novel insights applicable to real-world challenges. I believe empowerment arises from recognizing one's value as a member of society, and as an educator I strive to instill that confidence and purpose.</p>
+					</div>
+
+					<div class="philosophy-card">
+						<h3><span class="card-icon">◈</span> Active & Collaborative Learning</h3>
+						<p>Students learn best when actively engaged with peers and instructors. I create environments where students collaborate, share ideas, and participate in discussions that foster critical thinking. Rather than passive reception of information, I design sessions that challenge assumptions and build analytical frameworks.</p>
+					</div>
+
+					<div class="philosophy-card">
+						<h3><span class="card-icon">◈</span> Adaptive Pedagogy</h3>
+						<p>There is no one-size-fits-all approach to teaching. I continuously grow pedagogically, exploring new methods and strategies to better meet the diverse needs of each cohort. I adapt my delivery style, pacing, and materials based on real-time feedback and observed comprehension levels.</p>
+					</div>
+
+					<div class="philosophy-card">
+						<h3><span class="card-icon">◈</span> Critical Pedagogy & Real-World Impact</h3>
+						<p>I structure all courses using a critical pedagogy approach — connecting theoretical concepts to practical applications so students understand the real-world impact of their work. This empowers students to become more engaged and active participants in their chosen field, capable of translating classroom knowledge into tangible solutions. Simulating a production process, for example, helps students optimize resource usage, improve planning accuracy, and understand how algorithms drive real business outcomes.</p>
+					</div>
+
+					<div class="philosophy-card">
+						<h3><span class="card-icon">◈</span> Open Communication & Student Success</h3>
+						<p>I foster proactive and supportive dialogue so every student feels comfortable raising questions or concerns. By maintaining open communication channels and providing structured feedback, I ensure all students have the opportunity to thrive — whether they are struggling to grasp fundamentals or ready to push beyond the syllabus.</p>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Leadership & Project Management -->
+			<section id="leadership" class="two">
+				<canvas class="section-particles" aria-hidden="true"></canvas>
+				<div class="container fade-in-section">
+
+					<header>
+						<h2 class="section-heading">Leadership &amp; Project Management</h2>
+					</header>
+
+					<div class="lpm-grid">
+
+						<div class="lpm-card">
+							<span class="lpm-icon">🎓</span>
+							<h3>Student Mentorship &amp; Advising</h3>
+							<ul>
+								<li>Advised and guided multiple undergraduate students through independent research projects and end-of-degree dissertations.</li>
+								<li>Provided one-on-one mentorship on research methodology, technical writing, and academic positioning.</li>
+								<li>Coached students on translating theoretical study into applied project deliverables.</li>
+							</ul>
+						</div>
+
+						<div class="lpm-card">
+							<span class="lpm-icon">📋</span>
+							<h3>Curriculum Design &amp; Planning</h3>
+							<ul>
+								<li>Designed and structured multi-semester course syllabi ensuring alignment with program learning objectives.</li>
+								<li>Managed course timelines, assessment scheduling, and lab session delivery to ensure full syllabus completion within defined academic periods.</li>
+								<li>Developed original practical work modules and lab exercises to reinforce theoretical content.</li>
+							</ul>
+						</div>
+
+						<div class="lpm-card">
+							<span class="lpm-icon">🤝</span>
+							<h3>Cross-Functional Collaboration</h3>
+							<ul>
+								<li>Coordinated with department heads and faculty peers to align course content with broader program goals.</li>
+								<li>Participated in departmental academic planning meetings and contributed to curriculum review processes.</li>
+								<li>Liaised with student representatives to gather feedback and continuously improve course delivery.</li>
+							</ul>
+						</div>
+
+						<div class="lpm-card">
+							<span class="lpm-icon">📊</span>
+							<h3>Performance Tracking &amp; Assessment</h3>
+							<ul>
+								<li>Designed fair, rigorous assessment frameworks including written exams, practical evaluations, and project-based grading rubrics.</li>
+								<li>Monitored student performance across cohorts to identify at-risk students and implement targeted interventions.</li>
+								<li>Delivered detailed academic feedback to support continuous improvement in student outcomes.</li>
+							</ul>
+						</div>
+
+						<div class="lpm-card">
+							<span class="lpm-icon">🚀</span>
+							<h3>Research Project Leadership</h3>
+							<ul>
+								<li>Led student teams through end-to-end research projects, from problem definition and literature review to implementation and presentation.</li>
+								<li>Supervised undergraduate thesis projects, providing structured milestones and technical guidance throughout.</li>
+								<li>Encouraged students to present their work at departmental showcases, building professional communication skills.</li>
+							</ul>
+						</div>
+
+						<div class="lpm-card">
+							<span class="lpm-icon">💡</span>
+							<h3>Innovation in Teaching</h3>
+							<ul>
+								<li>Integrated real-world case studies and simulation tools into course content to bridge the gap between theory and practice.</li>
+								<li>Introduced data-driven examples in algorithms and networks courses to reflect modern industry applications.</li>
+								<li>Continuously incorporated emerging research and technology trends into course materials to keep content current and relevant.</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<!-- Skills badges -->
+					<div class="skills-grid" style="margin-top: 2.5em;">
+						<span class="skill-badge"><span class="skill-dot"></span>Curriculum Design</span>
+						<span class="skill-badge"><span class="skill-dot"></span>Academic Planning</span>
+						<span class="skill-badge"><span class="skill-dot"></span>Student Mentorship</span>
+						<span class="skill-badge"><span class="skill-dot"></span>Project Supervision</span>
+						<span class="skill-badge purple"><span class="skill-dot"></span>Leadership</span>
+						<span class="skill-badge purple"><span class="skill-dot"></span>Team Coordination</span>
+						<span class="skill-badge purple"><span class="skill-dot"></span>Critical Pedagogy</span>
+						<span class="skill-badge purple"><span class="skill-dot"></span>Assessment Design</span>
+						<span class="skill-badge green"><span class="skill-dot"></span>Cross-functional Collaboration</span>
+						<span class="skill-badge green"><span class="skill-dot"></span>Performance Tracking</span>
+						<span class="skill-badge green"><span class="skill-dot"></span>Research Advising</span>
+						<span class="skill-badge green"><span class="skill-dot"></span>Communication</span>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Courses Taught -->
+			<section id="courses" class="three">
+				<canvas class="section-particles" aria-hidden="true"></canvas>
+				<div class="container fade-in-section">
+
+					<header>
+						<h2 class="section-heading">Courses Taught</h2>
+					</header>
+
+					<div class="courses-grid">
+
+						<div class="course-card">
+							<div class="course-level">Graduate · Master Year 1 · ~80 Students</div>
+							<h3>Modeling &amp; Simulation</h3>
+							<p>Introduction to modeling and simulation principles — physical, symbolic, static, and dynamic modeling; mathematical modeling and operations research; state machine and Petri net modeling; simulation tools used in computer science. Equips students to simulate dynamic real-world systems such as epidemic spread and production processes.</p>
+							<span class="course-tag">Full Lecture Delivery</span>
+						</div>
+
+						<div class="course-card">
+							<div class="course-level">Undergraduate · Bachelor Year 3 · ~35 Students</div>
+							<h3>Multimedia Image Processing</h3>
+							<p>Digital image fundamentals — pixels, resolution, color models (RGB, YUV, YCbCr); human visual and artificial vision systems; contour detection, histogram equalization, binarization; 2D image classification, segmentation, and compression algorithms.</p>
+							<span class="course-tag">Practical Lab Sessions</span>
+						</div>
+
+						<div class="course-card">
+							<div class="course-level">Undergraduate · Bachelor Year 2 · ~35 Students</div>
+							<h3>Network Fundamentals</h3>
+							<p>Overview of corporate networks, their role, and constituent equipment; fundamental networking principles including switching modes, protocol layering, and network topology. Applied practical labs reinforced theoretical concepts with hands-on configuration exercises.</p>
+							<span class="course-tag">Practical Lab Sessions</span>
+						</div>
+
+						<div class="course-card">
+							<div class="course-level">Undergraduate · Bachelor Year 1 · ~35 Students</div>
+							<h3>Introduction to Algorithmics</h3>
+							<p>Core algorithmic frameworks, prevalent data formats, and problem-solving strategies. Explores the relationship between algorithms and programming, introducing students to structured thinking, complexity analysis, and fundamental data structures.</p>
+							<span class="course-tag">Teaching Assistant</span>
+						</div>
+
+						<div class="course-card">
+							<div class="course-level">Undergraduate · Bachelor Year 2</div>
+							<h3>Theory of Formal Languages</h3>
+							<p>Foundations of formal language theory including regular languages, context-free grammars, automata theory, and parsing techniques. Provides the theoretical underpinning for compiler design, natural language processing, and computational complexity.</p>
+							<span class="course-tag">Lecture &amp; Lab</span>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Back to Portfolio CTA -->
+			<section id="cta" class="four">
+				<canvas class="section-particles" aria-hidden="true"></canvas>
+				<div class="container fade-in-section" style="padding: 1em 0;">
+					<a href="index.html#portfolio" class="button scrolly" style="
+						background: transparent;
+						border: 1px solid rgba(0,212,255,0.4);
+						color: #00d4ff;
+						font-family: 'JetBrains Mono', monospace;
+						font-size: 0.65em;
+						letter-spacing: 0.12em;
+						text-transform: uppercase;
+						padding: 0.9em 2.8em;
+						border-radius: 3px;
+						transition: all 0.3s ease;
+						border-bottom: 1px solid rgba(0,212,255,0.4);
+					">← Back to Portfolio</a>
+				</div>
+			</section>
+
+		</div><!-- /main -->
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/animations.js"></script>
+
+		<script>
+		// Page-specific: hero headline slide-in + course/lpm card reveal
+		window.addEventListener('load', function () {
+			setTimeout(function () {
+				var h = document.getElementById('page-headline');
+				if (h) h.classList.add('visible');
+			}, 300);
+
+			// Staggered card reveal on scroll
+			function revealCards(selector) {
+				var cards = document.querySelectorAll(selector);
+				if (!cards.length || !window.IntersectionObserver) {
+					cards.forEach(function(c){ c.classList.add('visible'); });
+					return;
+				}
+				var obs = new IntersectionObserver(function(entries) {
+					entries.forEach(function(entry) {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+							obs.unobserve(entry.target);
+						}
+					});
+				}, { threshold: 0.12 });
+				cards.forEach(function(c, i) {
+					c.style.transitionDelay = (i * 0.1) + 's';
+					obs.observe(c);
+				});
+			}
+
+			revealCards('.course-card');
+			revealCards('.lpm-card');
+		});
+		</script>
+
+	</body>
 </html>
