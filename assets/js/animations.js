@@ -21,7 +21,7 @@ function initParticles() {
     var ctx = canvas.getContext('2d');
     var particles = [];
     var PARTICLE_COUNT  = 90;
-    var CONNECTION_DIST = 160;
+    var CONNECTION_DIST = 220;
 
     function resize() {
         canvas.width  = window.innerWidth;
@@ -95,8 +95,8 @@ function initSectionParticles() {
 function runSectionCanvas(canvas) {
     var ctx = canvas.getContext('2d');
     var particles = [];
-    var COUNT = 55;
-    var DIST  = 130;
+    var COUNT = 65;
+    var DIST  = 200;
 
     function resize() {
         var section   = canvas.parentElement;
