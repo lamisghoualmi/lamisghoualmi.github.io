@@ -7,10 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollObserver();
     initSkillsBadges();
     initTimeline();
-    // Intro animations fire after main.js removes is-preload
-    window.addEventListener('load', function () {
-        setTimeout(initIntroAnimation, 200);
-    });
+    initIntroLoop();   // replaces old one-shot intro
 });
 
 
@@ -22,7 +19,7 @@ function initParticles() {
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     var particles = [];
-    var PARTICLE_COUNT = 55;
+    var PARTICLE_COUNT  = 55;
     var CONNECTION_DIST = 130;
 
     function resize() {
@@ -43,21 +40,18 @@ function initParticles() {
         };
     }
 
-    for (var i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push(makeParticle());
-    }
+    for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(makeParticle());
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Draw connections first
         for (var i = 0; i < particles.length; i++) {
             for (var j = i + 1; j < particles.length; j++) {
                 var dx   = particles[i].x - particles[j].x;
                 var dy   = particles[i].y - particles[j].y;
                 var dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < CONNECTION_DIST) {
-                    var alpha = (1 - dist / CONNECTION_DIST) * 0.28;
+                    var alpha = (1 - dist / CONNECTION_DIST) * 0.3;
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -68,13 +62,11 @@ function initParticles() {
             }
         }
 
-        // Draw dots
         particles.forEach(function (p) {
             p.x += p.vx;
             p.y += p.vy;
             if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
             if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
             ctx.fillStyle = 'rgba(0,212,255,' + p.a + ')';
@@ -88,22 +80,65 @@ function initParticles() {
 
 
 /* =========================================================
-   2. INTRO: NAME SLIDE-IN + TYPEWRITER
+   2. INTRO — LOOPING SLIDE-IN + TYPEWRITER
+      Resets every time the section scrolls out, retypes on re-entry
    ========================================================= */
-function initIntroAnimation() {
-    var headline     = document.getElementById('intro-headline');
-    var typewriterEl = document.getElementById('typewriter-text');
 
-    if (headline) {
-        setTimeout(function () {
-            headline.classList.add('visible');
-            if (typewriterEl) {
-                setTimeout(function () {
-                    runTypewriter(typewriterEl);
-                }, 750);
-            }
-        }, 300);
+var twCancel  = false;
+var twRunning = false;
+
+function initIntroLoop() {
+    var section = document.getElementById('top');
+    if (!section) return;
+
+    if (!window.IntersectionObserver) {
+        // Fallback: run once
+        setTimeout(triggerIntro, 400);
+        return;
     }
+
+    var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                triggerIntro();
+            } else {
+                resetIntro();
+            }
+        });
+    }, { threshold: 0.35 });
+
+    obs.observe(section);
+}
+
+function resetIntro() {
+    twCancel  = true;
+    twRunning = false;
+    var headline = document.getElementById('intro-headline');
+    var twEl     = document.getElementById('typewriter-text');
+    if (headline) headline.classList.remove('visible');
+    if (twEl)     twEl.innerHTML = '';
+}
+
+function triggerIntro() {
+    if (twRunning) return;
+    twCancel  = false;
+    twRunning = true;
+
+    var headline = document.getElementById('intro-headline');
+    var twEl     = document.getElementById('typewriter-text');
+    if (!headline) return;
+
+    setTimeout(function () {
+        if (twCancel) return;
+        headline.classList.add('visible');
+
+        if (twEl) {
+            setTimeout(function () {
+                if (twCancel) return;
+                runTypewriter(twEl);
+            }, 750);
+        }
+    }, 300);
 }
 
 function runTypewriter(el) {
@@ -120,14 +155,20 @@ function runTypewriter(el) {
     el.innerHTML = '';
 
     function tick() {
+        if (twCancel) { el.innerHTML = ''; return; }
+
         if (lineIdx >= lines.length) {
-            // finished — keep cursor for 2 s then fade it
-            var lastCursor = el.querySelector('.tw-cursor');
-            if (lastCursor) {
+            // Typing done — blink cursor 2 s then fade it out
+            var cursor = el.querySelector('.tw-cursor');
+            if (cursor) {
                 setTimeout(function () {
-                    lastCursor.style.transition = 'opacity 0.6s';
-                    lastCursor.style.opacity = '0';
-                    setTimeout(function () { lastCursor.remove(); }, 700);
+                    if (twCancel) return;
+                    cursor.style.transition = 'opacity 0.6s';
+                    cursor.style.opacity    = '0';
+                    setTimeout(function () {
+                        if (cursor.parentNode) cursor.remove();
+                        twRunning = false;
+                    }, 700);
                 }, 2000);
             }
             return;
@@ -136,16 +177,14 @@ function runTypewriter(el) {
         var line = lines[lineIdx];
 
         if (charIdx < line.length) {
-            built   += line[charIdx];
+            built += line[charIdx];
             charIdx++;
             el.innerHTML = built + '<span class="tw-cursor"></span>';
             setTimeout(tick, 26);
         } else {
             lineIdx++;
             charIdx = 0;
-            if (lineIdx < lines.length) {
-                built += '<br />';
-            }
+            if (lineIdx < lines.length) built += '<br />';
             setTimeout(tick, 80);
         }
     }
@@ -160,7 +199,6 @@ function runTypewriter(el) {
 function initScrollObserver() {
     var els = document.querySelectorAll('.fade-in-section');
     if (!els.length || !window.IntersectionObserver) {
-        // Fallback: make everything visible
         els.forEach(function (el) { el.classList.add('is-visible'); });
         return;
     }
