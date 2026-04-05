@@ -9,7 +9,18 @@ document.addEventListener('DOMContentLoaded', function () {
     initSkillsBadges();
     initTimeline();
     initIntroLoop();
+    initExploreBtn();
 });
+
+function initExploreBtn() {
+    var btn = document.getElementById('explore-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById('skills');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+}
 
 
 /* =========================================================
@@ -226,7 +237,7 @@ function triggerIntro() {
 
 function runTypewriter(el) {
     var lines = [
-        'AI \u0026 ML Solutions Engineer  |  Microsoft Fabric \u00b7 Azure OpenAI \u00b7 Power BI',
+        'AI \u0026 ML Solutions Engineer  |  Microsoft Fabric \u00b7 Microsoft Foundry \u00b7 Power BI',
         'Agentic AI \u0026 Data Workflows  |  Scalable Analytics Systems',
         'IEEE \u00b7 Elsevier \u00b7 Springer Published  |  Conference Speaker'
     ];
